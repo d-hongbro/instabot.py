@@ -13,10 +13,10 @@ import time
 #IMPORTANT INFORMATION!
 ##Likes,Comments,Follows, and Unfollows have been tweaked to the amount of hours the bot runs for!
 ###So if your like_per_day=1000 and the bot runs for 2 hours, it will try to post that many in those two hours!
-bot = InstaBot(login="", password="",
+bot = InstaBot(login='', password='',
                like_per_day=1000,
                comments_per_day=0,
-               tag_list=['follow4follow', 'f4f', 'photo', 'photooftheday', 'photogrid', 'photoshoot', 'photographer', 'photos', 'photograph', 'photochallenge', 'photoftheday', 'photoaday', 'photoofday', 'photoday', 'photogram', 'pic', 'picoftheday', 'picstitch', 'picture', 'piccollage', 'pictureoftheday', 'pictures', 'picsart', 'pics', 'picofday', 'picoftheday', 'pictoftheday', 'pickoftheday', 'instaphoto', 'instapic', 'instagramanet', 'instatag'],
+               tag_list=['follow4follow', 'f4f', 'photo', 'photooftheday', 'photogrid', 'photoshoot', 'photographer', 'photos', 'photograph', 'photochallenge', 'photoftheday', 'photoaday', 'photoofday', 'photoday', 'photogram', 'pic', 'picoftheday', 'picstitch', 'picture', 'piccollage', 'pictureoftheday', 'pictures', 'picsart', 'pics', 'picofday', 'picoftheday', 'pictoftheday', 'pickoftheday', 'instaphoto', 'instapic', 'instagramanet', 'instatag', 'инстафото', 'инстаграманет', 'инстатаг', 'фото', 'фотосессия', 'фотограф', 'фотография', 'фотосет', 'фотодня', 'фотостудия', 'фотодляроссии', 'фотосъемка', 'фотопроект', 'фотографии', 'фотоотчет', 'фотомодель', 'фотоаппарат', 'фотографирую', 'фотозона', 'фотофан', 'фотографы', 'фотоархив', 'фотобезфильтра', 'фотокарточка', 'фотка', 'фотки', 'цвет', 'экспозиция', 'выдержка', 'искусство'],
                tag_blacklist=['rain', 'thunderstorm'],
                user_blacklist={},
                max_like_for_one_tag=50,
