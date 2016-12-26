@@ -65,7 +65,7 @@ class InstaBot:
     follow_counter = 0
     unfollow_counter = 0
     comments_counter = 0
-    current_user ='hajka'
+    current_user ='11111'
     current_index = 0
     current_id = 'abcds'
     # List of user_id, that bot follow
@@ -105,7 +105,7 @@ class InstaBot:
 
     def __init__(self, login, password,
                  like_per_day=1000,
-                 media_max_like=50,
+                 media_max_like=1000,
                  media_min_like=0,
                  follow_per_day=0,
                  follow_time=5 * 60 * 60,
@@ -522,7 +522,7 @@ class InstaBot:
             # ------------------- Unfollow -------------------
             self.new_auto_mod_unfollow()
             # ------------------- Comment -------------------
-            self.new_auto_mod_comments()
+            # self.new_auto_mod_comments()
             # Bot iteration in 1 sec
             time.sleep(3)
             # print("Tic!")

@@ -30,11 +30,7 @@ bot = InstaBot(login='', password='',
                # Use unwanted username list to block users which have username contains one of this string
                ## Doesn't have to match entirely example: mozart will be blocked because it contains *art
                ### freefollowers will be blocked because it contains free
-               unwanted_username_list=['second','stuff','art','project','love','life','food','blog','free','keren','photo','graphy','indo',
-                                       'travel','art','shop','store','sex','toko','jual','online','murah','jam','kaos','case','baju','fashion',
-                                        'corp','tas','butik','grosir','karpet','sosis','salon','skin','care','cloth','tech','rental',
-                                        'kamera','beauty','express','kredit','collection','impor','preloved','follow','follower','gain',
-                                        '.id','_id','bags']
+               unwanted_username_list=[]
                )
 while True:
 
@@ -52,7 +48,7 @@ while True:
     # DON'T USE MODE 5 FOR A LONG PERIOD. YOU RISK YOUR ACCOUNT FROM GETTING BANNED
     ## USE MODE 5 IN BURST MODE, USE IT TO UNFOLLOW PEOPLE AS MANY AS YOU WANT IN SHORT TIME PERIOD
 
-    mode = 0
+    mode = 2
 
     #print("You choose mode : %i" %(mode))
     #print("CTRL + C to cancel this operation or wait 30 seconds to start")
