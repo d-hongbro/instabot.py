@@ -16,7 +16,7 @@ import time
 bot = InstaBot(login='', password='',
                like_per_day=1000,
                comments_per_day=0,
-               tag_list=['follow4follow', 'f4f', 'photo', 'photooftheday', 'photogrid', 'photoshoot', 'photographer', 'photos', 'photograph', 'photochallenge', 'photoftheday', 'photoaday', 'photoofday', 'photoday', 'photogram', 'pic', 'picoftheday', 'picstitch', 'picture', 'piccollage', 'pictureoftheday', 'pictures', 'picsart', 'pics', 'picofday', 'picoftheday', 'pictoftheday', 'pickoftheday', 'instaphoto', 'instapic', 'instagramanet', 'instatag', 'инстафото', 'инстаграманет', 'инстатаг', 'фото', 'фотосессия', 'фотограф', 'фотография', 'фотосет', 'фотодня', 'фотостудия', 'фотодляроссии', 'фотосъемка', 'фотопроект', 'фотографии', 'фотоотчет', 'фотомодель', 'фотоаппарат', 'фотографирую', 'фотозона', 'фотофан', 'фотографы', 'фотоархив', 'фотобезфильтра', 'фотокарточка', 'фотка', 'фотки', 'цвет', 'экспозиция', 'выдержка', 'искусство'],
+               tag_list=['photo', 'photooftheday', 'photogrid', 'photoshoot', 'photographer', 'photos', 'photograph', 'photochallenge', 'photoftheday', 'photoaday', 'photoofday', 'photoday', 'photogram', 'pic', 'picoftheday', 'picstitch', 'picture', 'piccollage', 'pictureoftheday', 'pictures', 'picsart', 'pics', 'picofday', 'picoftheday', 'pictoftheday', 'pickoftheday', 'instaphoto', 'instapic', 'instagramanet', 'instatag', 'инстафото', 'инстаграманет', 'инстатаг', 'фото', 'фотосессия', 'фотограф', 'фотография', 'фотосет', 'фотодня', 'фотостудия', 'фотодляроссии', 'фотосъемка', 'фотопроект', 'фотографии', 'фотоотчет', 'фотомодель', 'фотоаппарат', 'фотографирую', 'фотозона', 'фотофан', 'фотографы', 'фотоархив', 'фотобезфильтра', 'фотокарточка', 'фотка', 'фотки', 'цвет', 'экспозиция', 'выдержка', 'искусство'],
                tag_blacklist=['rain', 'thunderstorm'],
                user_blacklist={},
                max_like_for_one_tag=50,
@@ -48,7 +48,7 @@ while True:
     # DON'T USE MODE 5 FOR A LONG PERIOD. YOU RISK YOUR ACCOUNT FROM GETTING BANNED
     ## USE MODE 5 IN BURST MODE, USE IT TO UNFOLLOW PEOPLE AS MANY AS YOU WANT IN SHORT TIME PERIOD
 
-    mode = 2
+    mode = 0 
 
     #print("You choose mode : %i" %(mode))
     #print("CTRL + C to cancel this operation or wait 30 seconds to start")
