@@ -12,12 +12,13 @@ from follow_protocol import follow_protocol
 from instabot import InstaBot
 from unfollow_protocol import unfollow_protocol
 
+
 bot = InstaBot(
     login="username",
     password="password",
     like_per_day=1000,
     comments_per_day=0,
-    tag_list=['follow4follow', 'f4f', 'cute'],
+    tag_list=list(set(['follow', 'followme', 'follow4follow', 'followforfollow', 'followback', 'followher', 'followhim', 'followall', 'follows', 'f4f', 'instatag', 'teamfollowback', 'pleasefollow', 'pleasefollowme', 'followbackteam', 'follower', 'following', 'followers', 'followalways', 'followshoutoutlikecomment', 'followbackalways', 'followforlike', 'followmeplease', 'followplease', 'followus', 'follow4like', 'follow4followback', 'instagramanet', 'followforfollowback', 'photo', 'photooftheday', 'photogrid', 'photoshoot', 'photographer', 'photos', 'photograph', 'photochallenge', 'photoftheday', 'photoaday', 'photoofday', 'photoday', 'photogram', 'pic', 'picoftheday', 'picstitch', 'picture', 'piccollage', 'pictureoftheday', 'pictures', 'picsart', 'pics', 'picofday', 'picoftheday', 'pictoftheday', 'pickoftheday', 'instaphoto', 'instapic', 'instagramanet', 'instatag', 'music', 'musica', 'musician', 'instamusic', 'instagramanet', 'instatag', 'musical', 'bestsong', 'goodmusic', 'musicvideo', 'musicislife', 'musicians', 'musiclife', 'musicfestival', 'musicismylife', 'musiclover', 'song', 'songs', 'songwriter', 'songoftheday', 'songlyrics', 'melody', 'hiphop', 'rnb', 'pop', 'rap', 'dubstep', 'electro'])),
     tag_blacklist=['rain', 'thunderstorm'],
     user_blacklist={},
     max_like_for_one_tag=50,
