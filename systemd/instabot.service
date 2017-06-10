@@ -1,0 +1,11 @@
+[Unit]
+Description=Instabot
+
+[Service]
+EnvironmentFile=/home/pi/data/instabot.py/.env
+WorkingDirectory=/home/pi/data/instabot.py
+ExecStart=/home/pi/.virtualenvs/instabot.py/bin/python example.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
