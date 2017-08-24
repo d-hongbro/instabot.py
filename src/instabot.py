@@ -411,7 +411,7 @@ class InstaBot:
                             self.write_log(log_string)
                             like = self.like(self.media_by_tag[i]['id'])
                             # comment = self.comment(self.media_by_tag[i]['id'], 'Cool!')
-                            # follow = self.follow(self.media_by_tag[i]["owner"]["id"])
+                            follow = self.follow(self.media_by_tag[i]["owner"]["id"])
                             if like != 0:
                                 if like.status_code == 200:
                                     # Like, all ok!
