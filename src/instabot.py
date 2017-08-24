@@ -410,6 +410,7 @@ class InstaBot:
                                          (self.media_by_tag[i]['id'])
                             self.write_log(log_string)
                             like = self.like(self.media_by_tag[i]['id'])
+                            import pdb; pdb.set_trace()
                             # comment = self.comment(self.media_by_tag[i]['id'], 'Cool!')
                             follow = self.follow(self.media_by_tag[i]["owner"]["id"])
                             if like != 0:
@@ -424,7 +425,7 @@ class InstaBot:
                                 elif like.status_code == 400:
                                     log_string = "Not liked: %i" \
                                                  % (like.status_code)
-                                    log_string += '\n' + like.content
+                                    log_string += '\n' + str(like.content)
                                     self.write_log(log_string)
                                     # Some error. If repeated - can be ban!
                                     if self.error_400 >= self.error_400_to_ban:
