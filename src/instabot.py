@@ -410,7 +410,6 @@ class InstaBot:
                                          (self.media_by_tag[i]['id'])
                             self.write_log(log_string)
                             like = self.like(self.media_by_tag[i]['id'])
-                            import pdb; pdb.set_trace()
                             # comment = self.comment(self.media_by_tag[i]['id'], 'Cool!')
                             follow = self.follow(self.media_by_tag[i]["owner"]["id"])
                             if like != 0:
