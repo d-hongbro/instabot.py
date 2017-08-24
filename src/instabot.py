@@ -424,6 +424,7 @@ class InstaBot:
                                 elif like.status_code == 400:
                                     log_string = "Not liked: %i" \
                                                  % (like.status_code)
+                                    log_string += '\n' + like.content
                                     self.write_log(log_string)
                                     # Some error. If repeated - can be ban!
                                     if self.error_400 >= self.error_400_to_ban:
