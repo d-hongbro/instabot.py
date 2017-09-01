@@ -4,8 +4,8 @@ import logging
 import requests
 import time
 import smtplib
-from email.MIMEMultipart import MIMEMultipart
-from email.MIMEText import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 logging.basicConfig(
     format='%(asctime)s %(message)s',
