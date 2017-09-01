@@ -16,19 +16,19 @@ logger.setLevel(logging.INFO)
 
 
 def send_mail(in_subject, in_content):
-    server = smtplib.SMTP('smtp.mail.yahoo.com', 465)
+    server = smtplib.SMTP('smtp.mail.yahoo.com', 587)
     server.starttls()
     server.login(os.environ['EMAIL_LOGIN'], os.environ['EMAIL_PASSWORD'])    
-    for address in os.environ['EMAIL_SEND_TO']: 
-        msg = MIMEMultipart()
-        msg['From'] = os.environ['EMAIL_LOGIN'] 
-        msg['To'] = address
-        msg['Subject'] = in_subject
+    address = os.environ['EMAIL_SEND_TO']
+    msg = MIMEMultipart()
+    msg['From'] = os.environ['EMAIL_LOGIN'] 
+    msg['To'] = address
+    msg['Subject'] = in_subject
  
-        msg.attach(MIMEText(in_content, 'plain'))
+    msg.attach(MIMEText(in_content, 'plain'))
  
-        text = msg.as_string()
-        server.sendmail(os.environ['EMAIL_LOGIN'], address, text)
+    text = msg.as_string()
+    server.sendmail(os.environ['EMAIL_LOGIN'], address, text)
     server.quit()
 
 
