@@ -3,6 +3,7 @@
 import os
 import sys
 import time
+import traceback
 
 sys.path.append(os.path.join(sys.path[0], 'src'))
 
@@ -11,6 +12,7 @@ from feed_scanner import feed_scanner
 from follow_protocol import follow_protocol
 from instabot import InstaBot
 from unfollow_protocol import unfollow_protocol
+from send import send_mail
 
 
 bot = InstaBot(
@@ -55,8 +57,8 @@ bot = InstaBot(
     ],
     unfollow_whitelist=['example_user_1', 'example_user_2'])
 
-while True:
 
+def run_bot():
     #print("# MODE 0 = ORIGINAL MODE BY LEVPASHA")
     #print("## MODE 1 = MODIFIED MODE BY KEMONG")
     #print("### MODE 2 = ORIGINAL MODE + UNFOLLOW WHO DON'T FOLLOW BACK")
@@ -114,3 +116,13 @@ while True:
 
     else:
         print("Wrong mode!")
+
+
+if __name__ == '__main__':
+    while True:
+       try:
+           run_bot()
+       except:
+           traceback.print_exc()
+           send_mail('[Instabot] Exception occured', traceback.format_exc())
+
