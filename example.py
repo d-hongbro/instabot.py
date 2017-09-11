@@ -15,50 +15,72 @@ from unfollow_protocol import unfollow_protocol
 from send import send_mail
 
 
-bot = InstaBot(
-    login=os.environ['INSTAGRAM_USERNAME'],
-    password=os.environ['INSTAGRAM_PASSWORD'],
-    like_per_day=1000,
-    comments_per_day=0,
-    tag_list=list(set(['follow', 'followme', 'follow4follow', 'followforfollow', 'followback', 'followher', 'followhim', 'followall', 'follows', 'f4f', 'instatag', 'teamfollowback', 'pleasefollow', 'pleasefollowme', 'followbackteam', 'follower', 'following', 'followers', 'followalways', 'followshoutoutlikecomment', 'followbackalways', 'followforlike', 'followmeplease', 'followplease', 'followus', 'follow4like', 'follow4followback', 'instagramanet', 'followforfollowback', 'photo', 'photooftheday', 'photogrid', 'photoshoot', 'photographer', 'photos', 'photograph', 'photochallenge', 'photoftheday', 'photoaday', 'photoofday', 'photoday', 'photogram', 'pic', 'picoftheday', 'picstitch', 'picture', 'piccollage', 'pictureoftheday', 'pictures', 'picsart', 'pics', 'picofday', 'picoftheday', 'pictoftheday', 'pickoftheday', 'instaphoto', 'instapic', 'instagramanet', 'instatag', 'music', 'musica', 'musician', 'instamusic', 'instagramanet', 'instatag', 'musical', 'bestsong', 'goodmusic', 'musicvideo', 'musicislife', 'musicians', 'musiclife', 'musicfestival', 'musicismylife', 'musiclover', 'song', 'songs', 'songwriter', 'songoftheday', 'songlyrics', 'melody', 'hiphop', 'rnb', 'pop', 'rap', 'dubstep', 'electro'])),
-    tag_blacklist=['rain', 'thunderstorm'],
-    user_blacklist={},
-    max_like_for_one_tag=50,
-    follow_per_day=300,
-    follow_time=1 * 60,
-    unfollow_per_day=300,
-    unfollow_break_min=15,
-    unfollow_break_max=30,
-    log_mod=0,
-    proxy=os.environ['PROXY'],
-    # List of list of words, each of which will be used to generate comment
-    # For example: "This shot feels wow!"
-    comment_list=[["this", "the", "your"],
-                  ["photo", "picture", "pic", "shot", "snapshot"],
-                  ["is", "looks", "feels", "is really"],
-                  ["great", "super", "good", "very good", "good", "wow",
-                   "WOW", "cool", "GREAT","magnificent", "magical",
-                   "very cool", "stylish", "beautiful", "so beautiful",
-                   "so stylish", "so professional", "lovely",
-                   "so lovely", "very lovely", "glorious","so glorious",
-                   "very glorious", "adorable", "excellent", "amazing"],
-                  [".", "..", "...", "!", "!!", "!!!"]],
-    # Use unwanted_username_list to block usernames containing a string
-    ## Will do partial matches; i.e. 'mozart' will block 'legend_mozart'
-    ### 'free_followers' will be blocked because it contains 'free'
-    unwanted_username_list=[
-        'second', 'stuff', 'art', 'project', 'love', 'life', 'food', 'blog',
-        'free', 'keren', 'photo', 'graphy', 'indo', 'travel', 'art', 'shop',
-        'store', 'sex', 'toko', 'jual', 'online', 'murah', 'jam', 'kaos',
-        'case', 'baju', 'fashion', 'corp', 'tas', 'butik', 'grosir', 'karpet',
-        'sosis', 'salon', 'skin', 'care', 'cloth', 'tech', 'rental', 'kamera',
-        'beauty', 'express', 'kredit', 'collection', 'impor', 'preloved',
-        'follow', 'follower', 'gain', '.id', '_id', 'bags'
-    ],
-    unfollow_whitelist=['example_user_1', 'example_user_2'])
-
-
 def run_bot():
+    bot = InstaBot(
+        login=os.environ['INSTAGRAM_USERNAME'],
+        password=os.environ['INSTAGRAM_PASSWORD'],
+        like_per_day=1000,
+        comments_per_day=0,
+        tag_list=list(set(
+            ['follow', 'followme', 'follow4follow', 'followforfollow',
+             'followback', 'followher', 'followhim', 'followall', 'follows',
+             'f4f', 'instatag', 'teamfollowback', 'pleasefollow',
+             'pleasefollowme', 'followbackteam', 'follower', 'following',
+             'followers', 'followalways', 'followshoutoutlikecomment',
+             'followbackalways', 'followforlike', 'followmeplease',
+             'followplease', 'followus', 'follow4like', 'follow4followback',
+             'instagramanet', 'followforfollowback', 'photo', 'photooftheday',
+             'photogrid', 'photoshoot', 'photographer', 'photos', 'photograph',
+             'photochallenge', 'photoftheday', 'photoaday', 'photoofday',
+             'photoday', 'photogram', 'pic', 'picoftheday', 'picstitch',
+             'picture', 'piccollage', 'pictureoftheday', 'pictures', 'picsart',
+             'pics', 'picofday', 'picoftheday', 'pictoftheday', 'pickoftheday',
+             'instaphoto', 'instapic', 'instagramanet', 'instatag', 'music',
+             'musica', 'musician', 'instamusic', 'instagramanet', 'instatag',
+             'musical', 'bestsong', 'goodmusic', 'musicvideo', 'musicislife',
+             'musicians', 'musiclife', 'musicfestival', 'musicismylife',
+             'musiclover', 'song', 'songs', 'songwriter', 'songoftheday',
+             'songlyrics', 'melody', 'hiphop', 'rnb', 'pop', 'rap', 'dubstep',
+             'electro'])),
+        tag_blacklist=['rain', 'thunderstorm'],
+        user_blacklist={},
+        max_like_for_one_tag=50,
+        follow_per_day=300,
+        follow_time=1 * 60,
+        unfollow_per_day=300,
+        unfollow_break_min=15,
+        unfollow_break_max=30,
+        log_mod=0,
+        proxy=os.environ['PROXY'],
+        # List of list of words, each of which will be used to generate comment
+        # For example: "This shot feels wow!"
+        comment_list=[["this", "the", "your"],
+                      ["photo", "picture", "pic", "shot", "snapshot"],
+                      ["is", "looks", "feels", "is really"],
+                      ["great", "super", "good", "very good", "good", "wow",
+                       "WOW", "cool", "GREAT", "magnificent", "magical",
+                       "very cool", "stylish", "beautiful", "so beautiful",
+                       "so stylish", "so professional", "lovely",
+                       "so lovely", "very lovely", "glorious", "so glorious",
+                       "very glorious", "adorable", "excellent", "amazing"],
+                      [".", "..", "...", "!", "!!", "!!!"]],
+        # Use unwanted_username_list to block usernames containing a string
+        ## Will do partial matches; i.e. 'mozart' will block 'legend_mozart'
+        ### 'free_followers' will be blocked because it contains 'free'
+        unwanted_username_list=[
+            'second', 'stuff', 'art', 'project', 'love', 'life', 'food', 'blog',
+            'free', 'keren', 'photo', 'graphy', 'indo', 'travel', 'art', 'shop',
+            'store', 'sex', 'toko', 'jual', 'online', 'murah', 'jam', 'kaos',
+            'case', 'baju', 'fashion', 'corp', 'tas', 'butik', 'grosir',
+            'karpet',
+            'sosis', 'salon', 'skin', 'care', 'cloth', 'tech', 'rental',
+            'kamera',
+            'beauty', 'express', 'kredit', 'collection', 'impor', 'preloved',
+            'follow', 'follower', 'gain', '.id', '_id', 'bags'
+        ],
+        unfollow_whitelist=['example_user_1', 'example_user_2']
+    )
+
     #print("# MODE 0 = ORIGINAL MODE BY LEVPASHA")
     #print("## MODE 1 = MODIFIED MODE BY KEMONG")
     #print("### MODE 2 = ORIGINAL MODE + UNFOLLOW WHO DON'T FOLLOW BACK")
