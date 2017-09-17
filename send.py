@@ -7,6 +7,8 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+from retrying import retry
+
 logging.basicConfig(
     format='%(asctime)s %(message)s',
     datefmt='%m/%d/%Y %I:%M:%S %p'
@@ -15,6 +17,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
+@retry(wait_random_min=1000, wait_random_max=2000, stop_max_attempt_number=5)
 def send_mail(in_subject, in_content):
     server = smtplib.SMTP('smtp.mail.yahoo.com', 587)
     server.starttls()

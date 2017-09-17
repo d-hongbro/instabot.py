@@ -51,7 +51,7 @@ def run_bot():
         unfollow_break_min=15,
         unfollow_break_max=30,
         log_mod=0,
-        proxy=os.environ['PROXY'],
+        proxy=os.environ.get('PROXY', ''),
         # List of list of words, each of which will be used to generate comment
         # For example: "This shot feels wow!"
         comment_list=[["this", "the", "your"],
@@ -95,7 +95,7 @@ def run_bot():
     # DON'T USE MODE 5 FOR A LONG PERIOD. YOU RISK YOUR ACCOUNT FROM GETTING BANNED
     ## USE MODE 5 IN BURST MODE, USE IT TO UNFOLLOW PEOPLE AS MANY AS YOU WANT IN SHORT TIME PERIOD
 
-    mode = 0 
+    mode = 1 
 
     #print("You choose mode : %i" %(mode))
     #print("CTRL + C to cancel this operation or wait 30 seconds to start")
